@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="humidity">Humidity :</string>
+    <string name="wind">Wind :</string>
+    <string name="precipitation">Precipitation :</string>
+    <string name="add_city_title">Enter city</string>
+    <string name="get_weather">Get Weather</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_msg_internet">There seems to be a problem with internet connection. Please try again.</string>
+    <string name="city_not_found">City not found</string>
+    <string name="degree_celcius">&#8451;</string>
+    <string name="degree_fahrenheit">&#8457;</string>
+    <string name="content_weathericon">Weather image</string>
+</resources>
+
+

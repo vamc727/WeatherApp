@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- If given more time, we can optimize this layout and design better with more weather details -->
+<!-- Master layout. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              xmlns:tools="http://schemas.android.com/tools">
+    <EditText
+        android:id="@+id/et_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="@dimen/default_margin"
+        android:hint="@string/add_city_title"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"/>
+    <Button
+        android:id="@+id/button_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/get_weather"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ProgressBar
+        android:id="@+id/loading_weather"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/default_margin"
+        android:gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/weatherLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="16dp">
+
+            <RelativeLayout
+                android:id="@+id/rv_weather_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                <ImageView
+                    android:id="@+id/iv_weather_icon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/content_weathericon"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/text_margin"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/iv_weather_icon">
+
+                    <TextView
+                        android:id="@+id/tv_degree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/tv_desc_humidity"
+                        android:layout_alignTop="@+id/iv_celsius"
+                        android:textColor="@color/black"
+                        android:textSize="40sp"
+                        tools:text="27.8"/>
+
+                    <TextView
+                        android:id="@+id/iv_celsius"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textColor="@color/black"
+                        android:textSize="40sp"
+                        android:layout_toEndOf="@id/tv_degree"
+                        android:text="@string/degree_fahrenheit"/>
+
+                    <TextView
+                        android:id="@+id/tv_desc_humidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_degree"
+                        android:layout_marginStart="@dimen/text_margin"
+                        android:text="@string/humidity"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/tv_humidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tv_degree"
+                        android:layout_marginEnd="@dimen/text_margin"
+                        android:textColor="@color/black"
+                        tools:text="20 %"/>
+
+                    <TextView
+                        android:id="@+id/tv_desc_wind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_humidity"
+                        android:layout_marginLeft="@dimen/text_margin"
+                        android:layout_marginRight="@dimen/text_margin"
+                        android:text="@string/wind"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/tv_wind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tv_humidity"
+                        android:layout_marginEnd="@dimen/text_margin"
+                        android:textColor="@color/black"
+                        tools:text="20 %"/>
+
+                    <TextView
+                        android:id="@+id/tv_desc_rain_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_wind"
+                        android:layout_marginBottom="@dimen/text_margin"
+                        android:layout_marginStart="@dimen/text_margin"
+                        android:text="@string/precipitation"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/tv_rain_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tv_wind"
+                        android:layout_marginBottom="@dimen/text_margin"
+                        android:layout_marginEnd="@dimen/text_margin"
+                        android:textColor="@color/black"
+                        tools:text="20 %"/>
+                </RelativeLayout>
+            </RelativeLayout>
+    </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
